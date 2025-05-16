@@ -1,0 +1,27 @@
+﻿@model int 
+
+@{
+
+    ViewData["Title"] = "Market Index";
+
+}
+
+<div class="row">
+     <h1 class="text-center">Product List</h1>
+     <h2>@Model</h2>
+</div>
+
+@{
+    /*Secciones para los Style*/
+}
+
+@section Style {
+    <link rel="stylesheet" href="~/css/Market/market_index.css" asp-append-version="true" />
+}
+
+@{/*Seccion para los Scripts*/}
+@section Scripts{
+ 
+    <script src="~/js/Market/market_index.js" asp-append-version="true"></script>
+
+}  

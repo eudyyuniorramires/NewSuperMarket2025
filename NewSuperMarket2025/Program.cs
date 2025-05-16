@@ -28,7 +28,7 @@ namespace NewSuperMarket2025
 
             app.MapControllerRoute(
                 name: "default",
-                pattern: "{controller=Home}/{action=Index}/{id?}");
+                pattern: "{controller=Market}/{action=Index}/{id?}");
 
             app.Run();
         }
