@@ -9,7 +9,7 @@ namespace Application.ViewModels
     public class ProductListViewModel
     {
 
-        public required List<ProductViewModels> Fruists { get; set; }
+        public required List<ProductViewModels> Fruits { get; set; }
 
 
         public required List<ProductViewModels> Vegetables { get; set; }

@@ -1,6 +1,6 @@
 ﻿@using Application.ViewModels
 
-@model List<ProductViewModels> 
+@model ProductListViewModel
     
 
 @{
@@ -35,7 +35,7 @@
                     </thead>  
 
                     <tbody>
-                        @foreach (var item in Model)
+                        @foreach (var item in Model.Fruits)
                         {
                            <tr> 
                                <td>@item.Name</td>
@@ -50,6 +50,77 @@
         </div>
     </div>
 
+
+    <div class="col-12  col-md-4">
+        <div class="card">
+
+            <div class="card-header bg-success text-ligh">
+                <h5 class="text-center">Vegetables</h5>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Prices</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.Vegetables)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.Description</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+       
+    </div>
+
+
+    <div class="col-12  col-md-4">
+        <div class="card">
+
+            <div class="card-header bg-warning text-ligh">
+                <h5 class="text-center">Dairy</h5>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Prices</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>
+
+                    <tbody>
+                        @foreach (var item in Model.DairyProducts)
+                        {
+                            <tr>
+                                <td>@item.Name</td>
+                                <td>@item.Price</td>
+                                <td>@item.Description</td>
+                            </tr>
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+
+
+    </div>
 </div>
   
 

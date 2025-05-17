@@ -1,9 +1,64 @@
-﻿@{
+﻿@using Application.ViewModels
 
-    ViewData["Title"] = "Add Product";
+@model NewProductViewModel
+
+@{
+
+    ViewData["Title"] = "AddProduct";
 
 }
 
-<div class="row">
-    <h1 class="text-center">Form New Product</h1>
+<div class="row text-center  d-flex justify-content-center">
+    <div class="col-12  col-md-6">
+
+        <div class="card d-flex  text-start ">
+            <div class="card-header bg-primary  text-light">
+                <h5 class="text-center">Add New Product</h5>
+            </div>
+
+            <div class="card-body ">
+                <form action="/Market/AddProduct"  method="post">
+
+                    <div class="mb-3">
+                        <label asp-for="Name" class="form-label">Name: </label>
+                        <input asp-for="Name" class="form-control"/>
+                        <span asp-validation-for ="Name"  class="text-danger"  ></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Price" class="form-label">Price: </label>
+                        <input asp-form="Price" class="form-control"/>
+                        <span asp-validation-for="Price" class="text-danger"></span>
+                    </div>
+
+                    <div class="mb-3">
+                        <label asp-for="Type" class="form-label">Product Type: </label>
+                        <select asp-form="Type" class="form-select" >
+                            <option value="1"> Fruits</option>
+                            <option value="2"> Vegetables</option>
+                            <option value="3"> Dairy</option>
+                            <span asp-validation-for="Type" class="text-danger"></span>
+
+                        </select>
+                    </div>
+
+
+                    <div class="mb-3">
+                        <label asp-for="Description" class="form-label">Description: </label>
+                        <textarea asp-form="Description" class="form-control" ></textarea>
+                        <span asp-validation-for="Description" class="text-danger"></span>
+
+                    </div>
+  
+                    <div>
+                        <button type="submit"  class="btn btn-outline-primary  float-end">Save</button>
+                        
+                        <button type="submit" class="btn btn-outline-primary float-end  me-2" >Come back to Home</button>
+
+                    </div>
+                </form>
+            </div>
+        </div>
+
+    </div>
 </div>
