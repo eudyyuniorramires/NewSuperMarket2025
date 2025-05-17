@@ -1,4 +1,7 @@
-﻿@model int 
+﻿@using Application.ViewModels
+
+@model List<ProductViewModels> 
+    
 
 @{
 
@@ -8,8 +11,47 @@
 
 <div class="row">
      <h1 class="text-center">Product List</h1>
-     <h2>@Model</h2>
+     <h2></h2>
 </div>
+
+
+<div class="row">
+
+    <div class="col-12  col-md-4">
+        <div class="card">
+
+            <div class="card-header bg-danger text-ligh">
+                <h5 class="text-center">Fruits</h5>
+            </div>
+
+            <div class="card-body">
+                <table class="table table-bordered">
+                    <thead>
+                        <tr>
+                            <th>Name</th>
+                            <th>Prices</th>
+                            <th>Description</th>
+                        </tr>
+                    </thead>  
+
+                    <tbody>
+                        @foreach (var item in Model)
+                        {
+                           <tr> 
+                               <td>@item.Name</td>
+                               <td>@item.Price</td>
+                               <td>@item.Description</td>
+                           </tr>   
+                        }
+                    </tbody>
+                </table>
+            </div>
+
+        </div>
+    </div>
+
+</div>
+  
 
 @{
     /*Secciones para los Style*/
