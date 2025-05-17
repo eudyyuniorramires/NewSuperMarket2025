@@ -1,4 +1,6 @@
 ﻿using Application.Dtos;
+using Application.Enum;
+using Application.Repositories;
 using Application.ViewModels;
 using System;
 using System.Collections.Generic;
@@ -11,53 +13,36 @@ namespace Application.Services
     public class ProductService
     {
          
-        public ProductListDto productList { get; set; } 
-
-
-
-        public ProductService() 
-        {
-
-            productList = new() 
-            { 
-                DairyProducts = new(),
-                Fruits = new(),
-                Vegetables = new() 
-            }; 
-        
-        }
-
+       
 
         public void Add(ProductDto dto) 
         {
             switch (dto.Type) 
             {
 
-                case 1:
-                    productList.Fruits.Add(dto);
+                case (int)ProductType.FRUITS:
+                    ProductRepository.Instance.productList.Fruits.Add(dto);
                     break;
 
-                case 2:
-                    productList.Vegetables.Add(dto);
+                case (int)ProductType.VEGETABLES:
+                    ProductRepository.Instance.productList.Vegetables.Add(dto);
                     break;
 
-                case 3:
-                    productList.DairyProducts.Add(dto);
+                case (int)ProductType.DAIRY_PRODUCTS:
+                    ProductRepository.Instance.productList.DairyProducts.Add(dto);
                     break;
 
                     default:
                     break;
-
 
             }
         
         }
 
 
-
         public ProductListDto GetAll()
         {
-            return productList;
+            return ProductRepository.Instance.productList;
 
         }
     }

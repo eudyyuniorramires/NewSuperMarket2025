@@ -64,26 +64,26 @@ namespace NewSuperMarket2025.Controllers
         }
 
         [HttpPost]
-        public IActionResult AddProduct(NewProductViewModel wm)
+        public IActionResult AddProduct(NewProductViewModel vm)
         {
 
             if (!ModelState.IsValid) 
             {
 
-                return View(wm);
+                return View();
                
             }
 
             _productService.Add(new ProductDto()
             {
-                Name = wm.Name,
-                Description = wm.Description,
-                Price = wm.Price,
-                Type = wm.Type
+                Name = vm.Name,
+                Description = vm.Description,
+                Price = vm.Price,
+                Type = vm.Type
             });
 
 
-            return View();
+            return RedirectToRoute(new { controller = "Market", action = "Index" });
         }
     }
 }
